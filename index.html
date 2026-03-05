@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salwar Kameez – Stitching Brochure</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400;500&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9922A;
+    --deep-red: #8B1A1A;
+    --ivory: #FAF5EC;
+    --warm-brown: #5C3A1E;
+    --mustard: #C8860A;
+    --pale-gold: #F3E0B0;
+    --text-dark: #2A1A0E;
+    --soft-cream: #FDF8F0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ivory);
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* === COVER PAGE === */
+  .cover {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(160deg, #1a0a00 0%, #3b1308 40%, #6b2010 70%, #8B1A1A 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 40px;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(ellipse at 20% 50%, rgba(201,146,42,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(201,146,42,0.1) 0%, transparent 50%);
+  }
+
+  /* Ornamental border */
+  .cover-border {
+    position: absolute;
+    inset: 20px;
+    border: 1px solid rgba(201,146,42,0.4);
+    pointer-events: none;
+  }
+  .cover-border::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(201,146,42,0.2);
+  }
+
+  /* Corner ornaments */
+  .corner {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    color: var(--gold);
+    font-size: 36px;
+    line-height: 1;
+  }
+  .corner.tl { top: 28px; left: 28px; }
+  .corner.tr { top: 28px; right: 28px; transform: scaleX(-1); }
+  .corner.bl { bottom: 28px; left: 28px; transform: scaleY(-1); }
+  .corner.br { bottom: 28px; right: 28px; transform: scale(-1); }
+
+  .cover-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
+
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 8vw, 80px);
+    color: var(--ivory);
+    text-align: center;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+
+  .cover-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 3vw, 26px);
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-align: center; 
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    margin-top: 10px;
+  }
+
+  .cover-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 20px 0 30px;
+    width: 340px;
+    max-width: 90%;
+  }
+  .cover-divider span { flex: 1; height: 1px; background: var(--gold); opacity: 0.5; }
+  .cover-divider i { color: var(--gold); font-style: normal; font-size: 18px; }
+
+  .cover-desc {
+    font-size: 16px;
+    color: rgba(250,245,236,0.7);
+    text-align: center;
+    max-width: 460px;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 50px;
+  }
+
+  .cover-badges {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .badge {
+    border: 1px solid rgba(201,146,42,0.5);
+    padding: 10px 22px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--pale-gold);
+    background: rgba(201,146,42,0.08);
+  }
+
+  /* Floating paisley motifs */
+  .paisley {
+    position: absolute;
+    opacity: 0.04;
+    font-size: 120px;
+    color: var(--gold);
+    user-select: none;
+    animation: float 8s ease-in-out infinite;
+  }
+  .paisley:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+  .paisley:nth-child(2) { top: 60%; right: 5%; animation-delay: 3s; font-size: 80px; }
+  .paisley:nth-child(3) { bottom: 15%; left: 15%; animation-delay: 5s; font-size: 60px; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+  }
+
+  /* === MAIN CONTENT === */
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  /* Section headers */
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    color: var(--deep-red);
+    margin-bottom: 30px;
+    line-height: 1.2;
+  }
+
+  .ornament-line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 50px;
+  }
+  .ornament-line::before, .ornament-line::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+  .ornament-line span { color: var(--gold); font-size: 20px; }
+
+  /* Intro section */
+  .intro {
+    background: var(--soft-cream);
+    padding: 60px 40px;
+    border-left: 3px solid var(--gold);
+    margin-bottom: 80px;
+    position: relative;
+  }
+  .intro::before {
+    content: '❝';
+    position: absolute;
+    top: 20px; left: 30px;
+    font-size: 60px;
+    color: var(--pale-gold);
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+  .intro p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: var(--warm-brown);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  /* Dress types grid */
+  .dress-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+  }
+
+  .dress-card {
+    background: white;
+    border: 1px solid var(--pale-gold);
+    padding: 0;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+  }
+  .dress-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(139,26,26,0.1);
+  }
+
+  .dress-card-header {
+    padding: 30px 28px 20px;
+    border-bottom: 1px solid var(--pale-gold);
+    position: relative;
+  }
+
+  .dress-number {
+    font-size: 48px;
+    font-family: 'Playfair Display', serif;
+    color: var(--pale-gold);
+    position: absolute;
+    top: 10px; right: 20px;
+    line-height: 1;
+  }
+
+  .dress-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .dress-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--deep-red);
+    margin-bottom: 6px;
+  }
+
+  .dress-origin {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .dress-card-body {
+    padding: 24px 28px;
+  }
+
+  .dress-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .dress-details {
+    list-style: none;
+  }
+  .dress-details li {
+    font-size: 13px;
+    color: var(--warm-brown);
+    padding: 5px 0;
+    border-bottom: 1px dotted var(--pale-gold);
+    display: flex;
+    gap: 8px;
+  }
+  .dress-details li::before { content: '◆'; color: var(--gold); font-size: 8px; margin-top: 3px; flex-shrink: 0; }
+
+  /* Measurements section */
+  .measurements {
+    background: linear-gradient(135deg, #1a0a00, #3b1308);
+    color: var(--ivory);
+    padding: 70px 60px;
+    margin: 0 -40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .measurements::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(201,146,42,0.1), transparent 60%);
+  }
+
+  .measurements .section-title { color: var(--pale-gold); }
+  .measurements .section-label { color: var(--gold); }
+
+  .measure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    position: relative;
+  }
+
+  .measure-item {
+    border: 1px solid rgba(201,146,42,0.3);
+    padding: 20px;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .measure-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .measure-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--ivory);
+    margin-bottom: 8px;
+  }
+
+  .measure-desc {
+    font-size: 13px;
+    color: rgba(250,245,236,0.6);
+    line-height: 1.6;
+  }
+
+  /* Fabric guide */
+  .fabric-section {
+    margin-bottom: 80px;
+  }
+
+  .fabric-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+  }
+
+  .fabric-card {
+    text-align: center;
+    padding: 28px 16px;
+    border: 1px solid var(--pale-gold);
+    background: white;
+    transition: background 0.3s;
+  }
+  .fabric-card:hover { background: var(--soft-cream); }
+
+  .fabric-swatch {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    border: 3px solid white;
+    box-shadow: 0 0 0 1px var(--pale-gold);
+  }
+
+  .fabric-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--deep-red);
+    margin-bottom: 6px;
+  }
+
+  .fabric-note {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.5;
+  }
+
+  /* Process steps */
+  .process {
+    margin-bottom: 80px;
+  }
+
+  .steps {
+    position: relative;
+    padding-left: 0;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    margin-bottom: 30px;
+    align-items: start;
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    background: var(--deep-red);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .step-content {
+    padding-top: 8px;
+    border-bottom: 1px solid var(--pale-gold);
+    padding-bottom: 24px;
+  }
+
+  .step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--warm-brown);
+    margin-bottom: 8px;
+  }
+
+  .step-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #666;
+  }
+
+  /* Color palette */
+  .palette-section {
+    background: var(--soft-cream);
+    padding: 60px;
+    margin: 0 -40px 80px;
+  }
+
+  .color-swatches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .color-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .chip {
+    width: 64px;
+    height: 64px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .chip-label {
+    font-size: 11px;
+    text-align: center;
+    color: var(--warm-brown);
+    letter-spacing: 0.5px;
+  }
+
+  /* Pricing */
+  .pricing {
+    margin-bottom: 80px;
+  }
+
+  .price-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+  }
+
+  .price-card {
+    border: 1px solid var(--pale-gold);
+    padding: 36px 28px;
+    text-align: center;
+    background: white;
+    position: relative;
+  }
+
+  .price-card.featured {
+    background: linear-gradient(160deg, #1a0a00, #8B1A1A);
+    color: white;
+    border-color: var(--gold);
+    transform: scale(1.03);
+  }
+
+  .price-card.featured .price-label { color: var(--gold); }
+  .price-card.featured .price-type { color: var(--ivory); }
+  .price-card.featured .price-amount { color: var(--pale-gold); }
+  .price-card.featured .price-note { color: rgba(250,245,236,0.6); }
+  .price-card.featured .price-features li { color: rgba(250,245,236,0.85); border-color: rgba(201,146,42,0.3); }
+
+  .featured-badge {
+    position: absolute;
+    top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--gold);
+    color: #1a0a00;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 16px;
+    font-weight: bold;
+  }
+
+  .price-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .price-type {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--deep-red);
+    margin-bottom: 20px;
+  }
+
+  .price-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--warm-brown);
+    margin-bottom: 4px;
+  }
+
+  .price-note {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 24px;
+  }
+
+  .price-features {
+    list-style: none;
+    text-align: left;
+  }
+  .price-features li {
+    font-size: 13px;
+    color: #666;
+    padding: 7px 0;
+    border-bottom: 1px dotted var(--pale-gold);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .price-features li::before { content: '✦'; color: var(--gold); font-size: 8px; }
+
+  /* Contact / CTA */
+  .cta {
+    background: linear-gradient(160deg, #8B1A1A, #C9922A);
+    padding: 80px 60px;
+    margin: 0 -40px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.05), transparent 70%);
+  }
+
+  .cta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .cta-sub {
+    font-size: 16px;
+    opacity: 0.85;
+    margin-bottom: 40px;
+    font-style: italic;
+    position: relative;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+  }
+
+  .contact-item {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 20px 30px;
+    min-width: 180px;
+  }
+
+  .contact-item-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 6px;
+  }
+
+  .contact-item-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 60px 24px; }
+    .measurements { margin: 0 -24px 60px; padding: 50px 30px; }
+    .palette-section { margin: 0 -24px 60px; padding: 40px 24px; }
+    .cta { margin: 0 -24px; padding: 60px 30px; }
+    .measure-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <div class="paisley">❀</div>
+  <div class="paisley">❁</div>
+  <div class="paisley">✿</div>
+  <div class="cover-border"></div>
+  <div class="corner tl">✦</div>
+  <div class="corner tr">✦</div>
+  <div class="corner bl">✦</div>
+  <div class="corner br">✦</div>
+
+  <p class="cover-tag">✦ Custom Tailoring Studio ✦</p>
+  <h1 class="cover-title">House of Kimya</h1>
+  <!-- <h1 class="cover-title">Salwar<br>Kameez</h1> -->
+  <p class="cover-subtitle">Salwar Kameez <br> Stitching Collection</p>
+  <div class="cover-divider">
+    <span></span><i>❧</i><span></span>
+  </div>
+  <p class="cover-desc">
+    Timeless South Asian elegance, crafted to your exact measurements — from Patiala suits to Pakistani lawn ensembles.
+  </p>
+  <div class="cover-badges">
+    <div class="badge">Custom Fit</div>
+    <div class="badge">Premium Fabrics</div>
+    <div class="badge">Handcrafted</div>
+  </div>
+</div>
+
+<!-- MAIN PAGE -->
+<div class="page">
+
+  <!-- Intro -->
+  <div class="intro">
+    <p>The Salwar Kameez is more than a garment — it is a canvas of culture, artistry, and personal expression. From festive celebrations to everyday elegance, we bring your vision to life with precision stitching and thoughtful craftsmanship.</p>
+  </div>
+
+  <!-- Dress Types -->
+  <p class="section-label">Our Specialties</p>
+  <h2 class="section-title">Styles We Stitch</h2>
+  <div class="ornament-line"><span>❧</span></div>
+
+  <div class="dress-grid">
+    <div class="dress-card">
+      <div class="dress-card-header">
+        <div class="dress-number">01</div>
+        <span class="dress-icon">🌼</span>
+        <div class="dress-name">Patiala Suit</div>
+        <div class="dress-origin">Punjab, India</div>
+      </div>
+      <div class="dress-card-body">
+        <p class="dress-desc">Vibrant and free-spirited — featuring a heavily pleated salwar that gathers at the ankles, paired with a flowing kurti and dupatta.</p>
+        <ul class="dress-details">
+          <li>100+ pleats in the salwar</li>
+          <li>Mid-length to long kurti</li>
+          <li>Dupatta in matching or contrast</li>
+          <li>Best in cotton, georgette</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dress-card">
+      <div class="dress-card-header">
+        <div class="dress-number">02</div>
+        <span class="dress-icon">🌸</span>
+        <div class="dress-name">Straight-Cut Suit</div>
+        <div class="dress-origin">Pan-South Asia</div>
+      </div>
+      <div class="dress-card-body">
+        <p class="dress-desc">The classic, clean silhouette — a straight kurti with embroidered yoke, paired with matching palazzo or tapered bottoms.</p>
+        <ul class="dress-details">
+          <li>Straight or A-line kurti</li>
+          <li>Block print or embroidery detail</li>
+          <li>Palazzo, churidar or trouser</li>
+          <li>Best in lawn, silk, cotton</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dress-card">
+      <div class="dress-card-header">
+        <div class="dress-number">03</div>
+        <span class="dress-icon">🌹</span>
+        <div class="dress-name">Pakistani Lawn Suit</div>
+        <div class="dress-origin">Pakistan</div>
+      </div>
+      <div class="dress-card-body">
+        <p class="dress-desc">Flowing and sophisticated — featuring a long kurti in lace or lawn fabric with wide-leg trousers and lace border detailing.</p>
+        <ul class="dress-details">
+          <li>Long tunic with scalloped hem</li>
+          <li>Wide-leg or bell-bottom trouser</li>
+          <li>Lace or chikankari work</li>
+          <li>Best in lawn, chiffon, organza</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dress-card">
+      <div class="dress-card-header">
+        <div class="dress-number">04</div>
+        <span class="dress-icon">✨</span>
+        <div class="dress-name">Angrakha Style</div>
+        <div class="dress-origin">Rajasthan, India</div>
+      </div>
+      <div class="dress-card-body">
+        <p class="dress-desc">Regal wrap-style kurti with asymmetrical front opening — timeless and statement-making for special occasions.</p>
+        <ul class="dress-details">
+          <li>Overlapping front panels</li>
+          <li>Tie or button closure</li>
+          <li>Flared or pleated bottom</li>
+          <li>Best in silk, brocade, velvet</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fabric Guide -->
+  <p class="section-label">Material Guide</p>
+  <h2 class="section-title">Recommended Fabrics</h2>
+  <div class="ornament-line"><span>❧</span></div>
+
+  <div class="fabric-section">
+    <div class="fabric-row">
+      <div class="fabric-card">
+        <div class="fabric-swatch" style="background: linear-gradient(135deg, #f5e6c8, #e8d0a0);"></div>
+        <div class="fabric-name">Cotton Lawn</div>
+        <div class="fabric-note">Breathable & lightweight. Ideal for daily wear.</div>
+      </div>
+      <div class="fabric-card">
+        <div class="fabric-swatch" style="background: linear-gradient(135deg, #c8a8d8, #9060b0);"></div>
+        <div class="fabric-name">Georgette</div>
+        <div class="fabric-note">Flowing drape. Perfect for Patiala salwars.</div>
+      </div>
+      <div class="fabric-card">
+        <div class="fabric-swatch" style="background: linear-gradient(135deg, #e8c8c8, #c07070);"></div>
+        <div class="fabric-name">Chiffon</div>
+        <div class="fabric-note">Sheer & elegant. Great for dupattas.</div>
+      </div>
+      <div class="fabric-card">
+        <div class="fabric-swatch" style="background: linear-gradient(135deg, #d4b896, #a07040);"></div>
+        <div class="fabric-name">Raw Silk</div>
+        <div class="fabric-note">Luxurious texture for festive occasions.</div>
+      </div>
+      <div class="fabric-card">
+        <div class="fabric-swatch" style="background: linear-gradient(135deg, #f0e8d0, #d8c898);"></div>
+        <div class="fabric-name">Chanderi</div>
+        <div class="fabric-note">Lightweight shine. Traditional & modern.</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .page -->
+
+<!-- Measurements Section (full bleed) -->
+<div class="measurements">
+  <div style="max-width: 960px; margin: 0 auto; position: relative;">
+    <p class="section-label">Tailoring Essentials</p>
+    <h2 class="section-title" style="color: var(--pale-gold);">Measurements We Take</h2>
+    <div style="height: 1px; background: rgba(201,146,42,0.3); margin-bottom: 40px;"></div>
+    <div class="measure-grid">
+      <div class="measure-item">
+        <div class="measure-label">01</div>
+        <div class="measure-name">Bust / Chest</div>
+        <div class="measure-desc">Fullest part of the chest, measured over the bust line.</div>
+      </div>
+      <div class="measure-item">
+        <div class="measure-label">02</div>
+        <div class="measure-name">Waist</div>
+        <div class="measure-desc">Natural waist — the narrowest part of your torso.</div>
+      </div>
+      <div class="measure-item">
+        <div class="measure-label">03</div>
+        <div class="measure-name">Hip</div>
+        <div class="measure-desc">Fullest part of the hips, about 8–9 inches below the waist.</div>
+      </div>
+      <div class="measure-item">
+        <div class="measure-label">04</div>
+        <div class="measure-name">Kurti Length</div>
+        <div class="measure-desc">From shoulder top to desired hem length.</div>
+      </div>
+      <div class="measure-item">
+        <div class="measure-label">05</div>
+        <div class="measure-name">Salwar Length</div>
+        <div class="measure-desc">From waist to ankle or preferred length.</div>
+      </div>
+      <div class="measure-item">
+        <div class="measure-label">06</div>
+        <div class="measure-name">Sleeve Length</div>
+        <div class="measure-desc">From shoulder point to wrist, with arm slightly bent.</div>
+      </div>
+      <div class="measure-item">
+        <div class="measure-label">07</div>
+        <div class="measure-name">Shoulder Width</div>
+        <div class="measure-desc">Across the back from shoulder seam to shoulder seam.</div>
+      </div>
+      <div class="measure-item">
+        <div class="measure-label">08</div>
+        <div class="measure-name">Neck</div>
+        <div class="measure-desc">Style preference: round, V-neck, collar, or boat neck.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- Process -->
+  <p class="section-label">How It Works</p>
+  <h2 class="section-title">Our Stitching Process</h2>
+  <div class="ornament-line"><span>❧</span></div>
+
+  <div class="process">
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-title">Consultation & Style Selection</div>
+          <p class="step-text">Bring your inspiration images or describe your dream outfit. We discuss style, occasion, fabric, and embellishment preferences together.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <div class="step-title">Fabric Sourcing & Measurement</div>
+          <p class="step-text">Choose from our curated fabric collection or bring your own. We take all 8 key measurements for a perfectly tailored fit.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <div class="step-title">Cutting & Pattern Making</div>
+          <p class="step-text">Our tailors draft a custom pattern based on your measurements, then carefully cut the fabric for minimal waste and best drape.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <div class="step-title">Stitching & Detailing</div>
+          <p class="step-text">Expert stitching with attention to seam finishes, embroidery placement, pleat formation, and lining as required.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <div class="step-title">Trial Fitting & Alterations</div>
+          <p class="step-text">Try on your outfit — we make any adjustments needed to ensure the perfect fit before final finishing.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">6</div>
+        <div class="step-content">
+          <div class="step-title">Final Delivery</div>
+          <p class="step-text">Your outfit is pressed, packaged, and ready to wear. Delivery time is typically 7–14 days depending on complexity.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Colour Palette -->
+  <p class="section-label">Popular Choices</p>
+  <h2 class="section-title">Signature Colour Palettes</h2>
+  <div class="ornament-line"><span>❧</span></div>
+
+</div>
+
+<div class="palette-section">
+  <div style="max-width: 960px; margin: 0 auto;">
+    <div class="color-swatches">
+      <div class="color-chip"><div class="chip" style="background:#C8860A;"></div><div class="chip-label">Mustard<br>Gold</div></div>
+      <div class="color-chip"><div class="chip" style="background:#8B1A1A;"></div><div class="chip-label">Deep<br>Crimson</div></div>
+      <div class="color-chip"><div class="chip" style="background:#4A7C59;"></div><div class="chip-label">Forest<br>Green</div></div>
+      <div class="color-chip"><div class="chip" style="background:#1A3A5C;"></div><div class="chip-label">Royal<br>Navy</div></div>
+      <div class="color-chip"><div class="chip" style="background:#C2185B;"></div><div class="chip-label">Rani<br>Pink</div></div>
+      <div class="color-chip"><div class="chip" style="background:#6A1550;"></div><div class="chip-label">Deep<br>Plum</div></div>
+      <div class="color-chip"><div class="chip" style="background:#F5E6C8;"></div><div class="chip-label">Ivory<br>Cream</div></div>
+      <div class="color-chip"><div class="chip" style="background:#B07040;"></div><div class="chip-label">Warm<br>Terracotta</div></div>
+      <div class="color-chip"><div class="chip" style="background:#2C5F8A;"></div><div class="chip-label">Peacock<br>Blue</div></div>
+      <div class="color-chip"><div class="chip" style="background:#7B3F00;"></div><div class="chip-label">Chocolate<br>Brown</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- Pricing -->
+  <p class="section-label">Investment</p>
+  <h2 class="section-title">Stitching Packages</h2>
+  <div class="ornament-line"><span>❧</span></div>
+
+  <div class="pricing">
+    <div class="price-cards">
+      <div class="price-card">
+        <div class="price-label">Package</div>
+        <div class="price-type">Basic Suit</div>
+        <div class="price-amount">₹800 – 1,200</div>
+        <div class="price-note">Simple salwar kameez</div>
+        <ul class="price-features">
+          <li>Kurti + Salwar stitching</li>
+          <li>1 fitting session</li>
+          <li>Plain or simple neckline</li>
+          <li>7–10 day delivery</li>
+        </ul>
+      </div>
+      <div class="price-card featured">
+        <div class="featured-badge">Most Popular</div>
+        <div class="price-label">Package</div>
+        <div class="price-type">Designer Suit</div>
+        <div class="price-amount">₹1,800 – 3,500</div>
+        <div class="price-note">With embroidery & dupatta</div>
+        <ul class="price-features">
+          <li>Full 3-piece stitching</li>
+          <li>Embroidery / print work</li>
+          <li>2 fitting sessions</li>
+          <li>Custom neckline & sleeves</li>
+          <li>10–14 day delivery</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-label">Package</div>
+        <div class="price-type">Bridal / Heavy</div>
+        <div class="price-amount">₹4,000+</div>
+        <div class="price-note">Heavily embellished outfits</div>
+        <ul class="price-features">
+          <li>Zardozi / mirror work</li>
+          <li>Lining & inner finishing</li>
+          <li>Multiple fittings</li>
+          <li>Premium fabric handling</li>
+          <li>Custom timeline</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CTA / Contact -->
+<div class="cta">
+  <h2 class="cta-title">Book Your Consultation</h2>
+  <p class="cta-sub">Bring your fabric, your vision, or just your imagination — we'll take care of the rest.</p>
+  <div class="contact-info">
+    <div class="contact-item">
+      <div class="contact-item-label">Call / WhatsApp</div>
+      <div class="contact-item-value">+91 7012172355</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-item-label">Studio Hours</div>
+      <div class="contact-item-value">Mon–Sat, 10am–7pm</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-item-label">Location</div>
+      <div class="contact-item-value">Kollam, India</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
