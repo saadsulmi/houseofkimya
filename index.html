@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>House of Kimya</title>
+<title>Salwar Kameez – Stitching Brochure</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400;500&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -463,10 +463,9 @@
     position: relative;
   }
 
-  /* dress grid */
   .dress-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
     gap: 30px;
     margin-bottom: 80px;
   }
@@ -547,8 +546,8 @@
   .measurements {
     background: linear-gradient(135deg, #1a0a00, #3b1308);
     color: var(--ivory);
-    padding: 70px 60px;
-    margin: 0 -40px 80px;
+    padding: 70px 40px;
+    margin-bottom: 80px;
     position: relative;
     overflow: hidden;
   }
@@ -564,7 +563,7 @@
 
   .measure-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
     gap: 20px;
     position: relative;
   }
@@ -603,7 +602,7 @@
 
   .fabric-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
     gap: 16px;
   }
 
@@ -691,8 +690,8 @@
   /* Color palette */
   .palette-section {
     background: var(--soft-cream);
-    padding: 60px;
-    margin: 0 -40px 80px;
+    padding: 60px 40px;
+    margin-bottom: 80px;
   }
 
   .color-swatches {
@@ -729,7 +728,7 @@
 
   .price-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
     gap: 24px;
   }
 
@@ -813,7 +812,6 @@
   .cta {
     background: linear-gradient(160deg, #8B1A1A, #C9922A);
     padding: 80px 60px;
-    margin: 0 -40px;
     text-align: center;
     color: white;
     position: relative;
@@ -853,7 +851,8 @@
     background: rgba(255,255,255,0.1);
     border: 1px solid rgba(255,255,255,0.2);
     padding: 20px 30px;
-    min-width: 180px;
+    min-width: 160px;
+    flex: 1 1 160px;
   }
 
   .contact-item-label {
@@ -869,16 +868,195 @@
     font-size: 17px;
   }
 
-  @media (max-width: 700px) {
-    .page { padding: 60px 24px; }
-    .measurements { margin: 0 -24px 60px; padding: 50px 30px; }
-    .palette-section { margin: 0 -24px 60px; padding: 40px 24px; }
-    .cta { margin: 0 -24px; padding: 60px 30px; }
-    .measure-grid { grid-template-columns: 1fr 1fr; }
-    .founders-grid { grid-template-columns: 1fr; }
+  /* ============================================
+     RESPONSIVE — TABLET (≤ 768px)
+  ============================================ */
+  @media (max-width: 768px) {
+    /* Page layout */
+    .page { padding: 50px 20px; }
+
+    /* Cover */
+    .cover { padding: 60px 24px; }
+    .cover-border { inset: 12px; }
+    .corner { font-size: 26px; width: 40px; height: 40px; }
+    .corner.tl { top: 18px; left: 18px; }
+    .corner.tr { top: 18px; right: 18px; }
+    .corner.bl { bottom: 18px; left: 18px; }
+    .corner.br { bottom: 18px; right: 18px; }
+    .cover-tag { font-size: 9px; letter-spacing: 3px; margin-bottom: 20px; }
+    .cover-desc { font-size: 15px; margin-bottom: 36px; }
+    .cover-badges { gap: 10px; }
+    .badge { padding: 8px 16px; font-size: 10px; letter-spacing: 2px; }
+
+    /* Section headers */
+    .section-title { margin-bottom: 20px; }
+    .ornament-line { margin-bottom: 36px; }
+
+    /* Intro */
+    .intro { padding: 44px 24px 36px; margin-bottom: 56px; }
+    .intro::before { font-size: 44px; top: 14px; left: 18px; }
+    .intro p { font-size: 16px; padding-left: 12px; }
+
+    /* Dress grid — single column on small tablets */
+    .dress-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+
+    /* Fabric */
+    .fabric-section { margin-bottom: 56px; }
+    .fabric-row { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .fabric-card { padding: 20px 10px; }
+    .fabric-swatch { width: 40px; height: 40px; margin-bottom: 12px; }
+    .fabric-name { font-size: 14px; }
+    .fabric-note { font-size: 11px; }
+
+    /* Measurements — full bleed fix */
+    .measurements {
+      margin: 0 0 56px;
+      padding: 50px 20px;
+    }
+    .measure-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+    .measure-name { font-size: 16px; }
+
+    /* Process */
+    .process { margin-bottom: 56px; }
+    .step { gap: 16px; margin-bottom: 22px; }
+    .step-number { width: 48px; height: 48px; font-size: 18px; flex-shrink: 0; }
+    .step-title { font-size: 18px; }
+    .step-text { font-size: 14px; }
+
+    /* Palette */
+    .palette-section {
+      margin: 0 0 56px;
+      padding: 40px 20px;
+    }
+    .color-swatches { gap: 12px; justify-content: center; }
+    .chip { width: 52px; height: 52px; }
+    .chip-label { font-size: 10px; }
+
+    /* Pricing */
+    .pricing { margin-bottom: 56px; }
+    .price-cards { grid-template-columns: 1fr; gap: 28px; }
+    .price-card.featured { transform: scale(1); }
+    .price-amount { font-size: 30px; }
+
+    /* Founders */
+    .founders-section { padding: 60px 0 56px; }
+    .founders-inner { padding: 0 20px; }
+    .founders-header { margin-bottom: 40px; }
+    .founders-tagline { font-size: 15px; }
+    .founders-grid { grid-template-columns: 1fr; gap: 24px; }
     .founders-grid::before { display: none; }
-    .founders-inner { padding: 0 24px; }
-    .founders-together { padding: 36px 28px; }
+    .founder-card { padding: 32px 24px 28px; }
+    .founder-name { font-size: 22px; }
+    .founder-bio { font-size: 14.5px; }
+    .founders-together { padding: 36px 24px; }
+    .founders-together-title { font-size: 19px; }
+    .founders-together-text { font-size: 14px; }
+
+    /* CTA */
+    .cta {
+      margin: 0;
+      padding: 60px 20px;
+    }
+    .contact-info { gap: 16px; }
+    .contact-item { padding: 16px 20px; min-width: 140px; }
+    .contact-item-value { font-size: 15px; }
+  }
+
+  /* ============================================
+     RESPONSIVE — MOBILE (≤ 480px)
+  ============================================ */
+  @media (max-width: 480px) {
+    /* Cover */
+    .cover { padding: 50px 18px; min-height: 100svh; }
+    .cover-border { inset: 10px; }
+    .corner { font-size: 20px; }
+    .corner.tl { top: 14px; left: 14px; }
+    .corner.tr { top: 14px; right: 14px; }
+    .corner.bl { bottom: 14px; left: 14px; }
+    .corner.br { bottom: 14px; right: 14px; }
+    .cover-tag { font-size: 8px; letter-spacing: 2px; }
+    .cover-subtitle { letter-spacing: 1.5px; }
+    .cover-desc { font-size: 14px; }
+    .badge { padding: 7px 12px; font-size: 9px; letter-spacing: 1.5px; }
+    .cover-badges { gap: 8px; }
+
+    /* Page */
+    .page { padding: 40px 16px; }
+
+    /* Section title */
+    .section-label { font-size: 9px; letter-spacing: 3px; }
+
+    /* Intro */
+    .intro { padding: 40px 18px 30px; margin-bottom: 44px; }
+    .intro::before { display: none; }
+    .intro p { font-size: 15px; padding-left: 0; }
+
+    /* Dress cards */
+    .dress-grid { gap: 16px; margin-bottom: 44px; }
+    .dress-card-header { padding: 22px 20px 16px; }
+    .dress-number { font-size: 36px; }
+    .dress-name { font-size: 19px; }
+    .dress-card-body { padding: 18px 20px; }
+    .dress-desc { font-size: 14px; }
+
+    /* Fabric — 2 columns on small phones */
+    .fabric-row { grid-template-columns: repeat(2, 1fr); }
+    .fabric-section { margin-bottom: 44px; }
+
+    /* Measurements */
+    .measurements { padding: 40px 16px; margin-bottom: 44px; }
+    .measure-grid { grid-template-columns: 1fr; gap: 12px; }
+    .measure-item { padding: 16px; }
+    .measure-name { font-size: 15px; }
+    .measure-desc { font-size: 12px; }
+
+    /* Process */
+    .process { margin-bottom: 44px; }
+    .step { grid-template-columns: 44px 1fr; gap: 14px; }
+    .step-number { width: 44px; height: 44px; font-size: 16px; }
+    .step-title { font-size: 16px; }
+    .step-text { font-size: 13px; }
+    .step-content { padding-bottom: 18px; }
+
+    /* Palette */
+    .palette-section { padding: 32px 16px; margin-bottom: 44px; }
+    .chip { width: 46px; height: 46px; }
+    .color-swatches { gap: 10px; }
+
+    /* Pricing */
+    .pricing { margin-bottom: 44px; }
+    .price-cards { gap: 20px; }
+    .price-card { padding: 28px 20px; }
+    .price-type { font-size: 20px; }
+    .price-amount { font-size: 26px; }
+    .price-features li { font-size: 12px; }
+
+    /* Founders */
+    .founders-section { padding: 48px 0 44px; }
+    .founders-inner { padding: 0 16px; }
+    .founders-header { margin-bottom: 30px; }
+    .founders-tagline { font-size: 14px; }
+    .founder-card { padding: 28px 18px 24px; }
+    .founder-avatar { width: 60px; height: 60px; margin-bottom: 18px; }
+    .founder-initials { font-size: 22px; }
+    .founder-name { font-size: 20px; }
+    .founder-title { font-size: 9px; letter-spacing: 2.5px; }
+    .founder-bio { font-size: 14px; }
+    .founder-quote { font-size: 13.5px; padding-left: 14px; }
+    .founders-together { padding: 28px 18px; margin-top: 32px; }
+    .founders-together-title { font-size: 17px; }
+    .founders-together-text { font-size: 13.5px; }
+    .founders-together-ornament { letter-spacing: 5px; }
+
+    /* CTA */
+    .cta { padding: 50px 16px; }
+    .cta-sub { font-size: 14px; margin-bottom: 30px; }
+    .contact-info { flex-direction: column; align-items: center; gap: 12px; }
+    .contact-item { width: 100%; max-width: 300px; padding: 14px 20px; }
   }
 </style>
 </head>
@@ -1289,7 +1467,6 @@
 <!-- ========== END FOUNDERS SECTION ========== -->
 
 <!-- CTA / Contact -->
-<div class="page" style="padding-bottom: 0;">
 <div class="cta">
   <h2 class="cta-title">Book Your Consultation</h2>
   <p class="cta-sub">Bring your fabric, your vision, or just your imagination — we'll take care of the rest.</p>
@@ -1307,7 +1484,6 @@
       <div class="contact-item-value">Kollam, Kerala</div>
     </div>
   </div>
-</div>
 </div>
 
 </body>
