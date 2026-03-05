@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salwar Kameez – Stitching Brochure</title>
+<title>House of Kimya</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400;500&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -49,7 +49,6 @@
       radial-gradient(ellipse at 80% 20%, rgba(201,146,42,0.1) 0%, transparent 50%);
   }
 
-  /* Ornamental border */
   .cover-border {
     position: absolute;
     inset: 20px;
@@ -63,7 +62,6 @@
     border: 1px solid rgba(201,146,42,0.2);
   }
 
-  /* Corner ornaments */
   .corner {
     position: absolute;
     width: 60px;
@@ -145,7 +143,6 @@
     background: rgba(201,146,42,0.08);
   }
 
-  /* Floating paisley motifs */
   .paisley {
     position: absolute;
     opacity: 0.04;
@@ -170,7 +167,6 @@
     padding: 80px 40px;
   }
 
-  /* Section headers */
   .section-label {
     font-size: 10px;
     letter-spacing: 5px;
@@ -201,7 +197,6 @@
   }
   .ornament-line span { color: var(--gold); font-size: 20px; }
 
-  /* Intro section */
   .intro {
     background: var(--soft-cream);
     padding: 60px 40px;
@@ -226,7 +221,249 @@
     font-style: italic;
   }
 
-  /* Dress types grid */
+  /* === FOUNDERS SECTION === */
+  .founders-section {
+    background: linear-gradient(160deg, #fdf6e8 0%, #faf0d8 60%, #f5e6c0 100%);
+    padding: 90px 0 80px;
+    margin: 0 0 0px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .founders-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at 10% 80%, rgba(201,146,42,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 20%, rgba(139,26,26,0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Decorative top border */
+  .founders-section::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(to right, transparent, var(--gold), var(--deep-red), var(--gold), transparent);
+  }
+
+  .founders-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .founders-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .founders-header .section-label {
+    display: block;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  .founders-header .section-title {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .founders-tagline {
+    text-align: center;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--warm-brown);
+    opacity: 0.8;
+    margin-top: 16px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+  }
+
+  .founders-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    position: relative;
+  }
+
+  /* Vertical divider between the two cards */
+  .founders-grid::before {
+    content: '✦';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--gold);
+    font-size: 22px;
+    z-index: 2;
+    background: linear-gradient(180deg, #fdf6e8, #f5e6c0);
+    padding: 10px 6px;
+  }
+
+  .founder-card {
+    background: white;
+    border: 1px solid rgba(201,146,42,0.25);
+    padding: 44px 36px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.35s, transform 0.35s;
+  }
+
+  .founder-card:hover {
+    box-shadow: 0 24px 50px rgba(139,26,26,0.10);
+    transform: translateY(-4px);
+  }
+
+  /* Subtle corner motif */
+  .founder-card::before {
+    content: '❀';
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 28px;
+    color: var(--pale-gold);
+    opacity: 0.7;
+    line-height: 1;
+  }
+
+  /* Bottom accent bar */
+  .founder-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--gold), var(--deep-red));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .founder-card:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Avatar / Monogram */
+  .founder-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--deep-red), #C9922A);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    border: 3px solid white;
+    box-shadow: 0 0 0 1px var(--pale-gold), 0 8px 20px rgba(139,26,26,0.15);
+  }
+
+  .founder-initials {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: white;
+    font-style: italic;
+    letter-spacing: 1px;
+  }
+
+  .founder-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--deep-red);
+    margin-bottom: 4px;
+    font-style: italic;
+  }
+
+  .founder-title {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 22px;
+    display: block;
+  }
+
+  .founder-divider {
+    width: 48px;
+    height: 1px;
+    background: linear-gradient(to right, var(--gold), var(--deep-red));
+    margin-bottom: 22px;
+  }
+
+  .founder-bio {
+    font-size: 15.5px;
+    line-height: 1.95;
+    color: #5a3d28;
+  }
+
+  .founder-bio p {
+    margin-bottom: 14px;
+  }
+
+  .founder-bio p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Quote highlight within bio */
+  .founder-quote {
+    border-left: 2px solid var(--gold);
+    padding-left: 16px;
+    margin: 20px 0;
+    font-style: italic;
+    color: var(--warm-brown);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  /* Together section below the two cards */
+  .founders-together {
+    margin-top: 48px;
+    background: linear-gradient(135deg, #1a0a00, #3b1308 50%, #8B1A1A);
+    padding: 44px 48px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .founders-together::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(201,146,42,0.12), transparent 65%);
+  }
+
+  .founders-together-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--pale-gold);
+    font-style: italic;
+    margin-bottom: 14px;
+    position: relative;
+  }
+
+  .founders-together-text {
+    font-size: 15px;
+    line-height: 1.9;
+    color: rgba(250,245,236,0.78);
+    max-width: 620px;
+    margin: 0 auto;
+    font-style: italic;
+    position: relative;
+  }
+
+  .founders-together-ornament {
+    color: var(--gold);
+    font-size: 18px;
+    margin: 14px 0;
+    letter-spacing: 8px;
+    display: block;
+    position: relative;
+  }
+
+  /* dress grid */
   .dress-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -632,12 +869,16 @@
     font-size: 17px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     .page { padding: 60px 24px; }
     .measurements { margin: 0 -24px 60px; padding: 50px 30px; }
     .palette-section { margin: 0 -24px 60px; padding: 40px 24px; }
     .cta { margin: 0 -24px; padding: 60px 30px; }
     .measure-grid { grid-template-columns: 1fr 1fr; }
+    .founders-grid { grid-template-columns: 1fr; }
+    .founders-grid::before { display: none; }
+    .founders-inner { padding: 0 24px; }
+    .founders-together { padding: 36px 28px; }
   }
 </style>
 </head>
@@ -656,7 +897,6 @@
 
   <p class="cover-tag">✦ Custom Tailoring Studio ✦</p>
   <h1 class="cover-title">House of Kimya</h1>
-  <!-- <h1 class="cover-title">Salwar<br>Kameez</h1> -->
   <p class="cover-subtitle">Salwar Kameez <br> Stitching Collection</p>
   <div class="cover-divider">
     <span></span><i>❧</i><span></span>
@@ -977,7 +1217,79 @@
 
 </div>
 
+<!-- ========== FOUNDERS SECTION ========== -->
+<div class="founders-section">
+  <div class="founders-inner">
+
+    <div class="founders-header">
+      <span class="section-label">The Women Behind the Studio</span>
+      <h2 class="section-title">Meet Our Founders</h2>
+      <p class="founders-tagline">Two passionate women from the heart of South Kerala, weaving their dreams into every stitch.</p>
+    </div>
+
+    <div class="ornament-line" style="margin-bottom: 44px;"><span>❧</span></div>
+
+    <div class="founders-grid">
+
+      <!-- Founder 1 -->
+      <div class="founder-card">
+        <div class="founder-avatar">
+          <span class="founder-initials">JS</span>
+        </div>
+        <div class="founder-name">Jasna Sidhiq</div>
+        <span class="founder-title">Co-Founder &amp; Head of Design</span>
+        <div class="founder-divider"></div>
+        <div class="founder-bio">
+          <p>
+            Born and raised in Kollam, Kerala, Jasna grew up surrounded by the vivid colours of traditional South Indian textiles — the deep reds of Kasavu borders, the shimmer of Kanchipuram silk, and the breezy softness of Kerala cotton. Fashion was never just clothing to her; it was a language she was born knowing.
+          </p>
+          <div class="founder-quote">
+            "Every woman deserves a garment that feels like it was made just for her — because with us, it truly is."
+          </div>
+          <p>
+            After years of honing her craft through formal training and countless hours at the sewing machine, Jasna channelled her passion into co-founding House of Kimya. She leads the design vision of the studio — translating each client's personality into silhouettes, necklines, and embellishments that feel both timeless and deeply personal. Her signature touch: garments that honour tradition while feeling entirely contemporary.
+          </p>
+        </div>
+      </div>
+
+      <!-- Founder 2 -->
+      <div class="founder-card">
+        <div class="founder-avatar" style="background: linear-gradient(135deg, #C8860A, #8B1A1A);">
+          <span class="founder-initials">SF</span>
+        </div>
+        <div class="founder-name">Suman Farsna</div>
+        <span class="founder-title">Co-Founder &amp; Master Tailor</span>
+        <div class="founder-divider"></div>
+        <div class="founder-bio">
+          <p>
+            Also from the lush landscapes of South Kerala, Suman Farsna discovered her calling in the precise, meditative art of tailoring. Where others saw fabric, she saw potential — the curve of a sleeve, the fall of a pleat, the way a well-placed dart can transform an ordinary piece into something extraordinary.
+          </p>
+          <div class="founder-quote">
+            "Fashion is not about following trends — it is about crafting something that makes a woman walk taller and feel truly herself."
+          </div>
+          <p>
+            Suman is the technical backbone of House of Kimya — the one who ensures that Jasna's creative visions are realised with impeccable precision. Her expertise spans pattern-making, draping, and finish-work, from intricate Patiala pleating to the finest bridal embellishments. Together, the two women bring a rare combination of artistry and mastery to every garment they create.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Together statement -->
+    <div class="founders-together">
+      <div class="founders-together-title">Born in Kerala. Built on Passion.</div>
+      <span class="founders-together-ornament">✦ ✦ ✦</span>
+      <p class="founders-together-text">
+        Jasna and Suman are more than business partners — they are two women who dared to follow their love for fashion in a world that often asks women to choose practicality over passion. House of Kimya is their answer: a studio rooted in the rich textile traditions of South Kerala, run entirely by women who understand what it means to want clothing that truly fits — not just the body, but the soul.
+      </p>
+    </div>
+
+  </div>
+</div>
+<!-- ========== END FOUNDERS SECTION ========== -->
+
 <!-- CTA / Contact -->
+<div class="page" style="padding-bottom: 0;">
 <div class="cta">
   <h2 class="cta-title">Book Your Consultation</h2>
   <p class="cta-sub">Bring your fabric, your vision, or just your imagination — we'll take care of the rest.</p>
@@ -992,9 +1304,10 @@
     </div>
     <div class="contact-item">
       <div class="contact-item-label">Location</div>
-      <div class="contact-item-value">Kollam, India</div>
+      <div class="contact-item-value">Kollam, Kerala</div>
     </div>
   </div>
+</div>
 </div>
 
 </body>
